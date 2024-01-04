@@ -1,10 +1,12 @@
 impl Solution {
     pub fn convert(s: String, num_rows: i32) -> String {
-        if (s.len() <= 1 )| (num_rows <= 1) { return s; }
+        if (s.len() <= 1) | (num_rows <= 1) {
+            return s;
+        }
 
         enum Direction {
             Up,
-            Down
+            Down,
         }
 
         let num_rows: usize = num_rows as usize;
@@ -14,9 +16,9 @@ impl Solution {
         let v: Vec<char> = s.chars().collect();
         let mut row = 0;
         let mut column = 0;
-        
-        let mut zigzag = vec![vec![' ';v.len()]; num_rows];
-        
+
+        let mut zigzag = vec![vec![' '; v.len()]; num_rows];
+
         let mut direction = Direction::Down;
 
         for i in 0..v.len() {
@@ -38,7 +40,7 @@ impl Solution {
                         row = 1; // when reached the top, next write at row 2
                     }
                 }
-            }    
+            }
         }
 
         let mut new_vec = Vec::new();
@@ -47,6 +49,6 @@ impl Solution {
             new_vec.append(r);
         }
         let new_string: String = new_vec.iter().collect();
-        new_string 
+        new_string
     }
 }

@@ -4,15 +4,14 @@ impl Solution {
 
         let mut start;
         let mut end;
-        let mut longest:i32 = -1;
+        let mut longest: i32 = -1;
 
-        
         let s: Vec<char> = s.chars().collect();
 
         for i in 0..s.len() {
             for j in (i..s.len()).rev() {
                 if s[i] == s[j] {
-                    start = i;   
+                    start = i;
                     end = j;
                     longest = cmp::max(longest, end as i32 - start as i32 - 1);
                 }
@@ -20,6 +19,5 @@ impl Solution {
         }
 
         longest
-        
     }
 }
