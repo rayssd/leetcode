@@ -81,7 +81,6 @@ impl Solution {
         }
 
         s
-        
     }
 }
 fn main() {
